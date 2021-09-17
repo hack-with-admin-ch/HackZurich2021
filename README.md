@@ -69,7 +69,7 @@ The four input files used by ValueNet can be found in the folder `input_data`. T
 
 ### Description of the Q&A pair-generator
 
-We prepared a script that takes the data files and generates pairs of questions in natural language and answers as SQL-queries. The R-script is documented and can be accessed under: generate_sql_statments_and_questions.Rmd
+We prepared two scripts that takes the data files and generates pairs of questions in natural language and answers as SQL-queries. The first python-script is documented and can be accessed under: generate_sql_statments_and_questions.ipynb
 [https://github.com/statistikZH/statbot/tree/main/hackathon_hackzurich](https://github.com/statistikZH/statbot/tree/main/hackathon_hackzurich)
 Examples of good questions can thus be accessed in the file.  
 
@@ -100,6 +100,8 @@ WHERE T2.name = 'Zuerich' and T1.year = 2016
 
 The Postgres database including the new views can be downloaded from:
 [https://github.com/brunnurs/valuenet/blob/hackzurich/data/hack_zurich/hack_zurich_database.dmp](https://github.com/brunnurs/valuenet/blob/hackzurich/data/hack_zurich/hack_zurich_database.dmp)
+
+The second script then takes the Q&A pairs populated in the CSV-file questions_queries_python.csv and through a T5 machine learning model generates paraphrases in order to have a larger training set. This second, which can be found under scripts/paraphrases.py, generates the larger file under questions_queries_paraphrases.csv. Like this we have for example instead of 77 Q&A pairs then about 573 pairs. You can also try to tweak the script and generate more training data. The more (qualitatively good!) data we have, the better.
 
 ### User Interface Aspects
 
