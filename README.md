@@ -103,23 +103,23 @@ The Postgres database including the new views can be downloaded from:
 
 ### User Interface Aspects
 
-By thinking about possible user interfaces for our challenge, we identified the following aspect. Please treat these as inspiration and feel free to create issues / PRs if you find more aspects that you consider to be important.
+Building a good user interface is an important aspect of creating a user-friendly and intuitive experience when it comes to interacting with OGD. By thinking about possible user interfaces for our challenge, we identified the following aspects you could take into consideration. Please treat these as an inspiration and feel free to create issues / PRs if you find more aspects that you consider to be important.
 
 #### Data discovery
 
-We might have data about topics our users are not aware of and be able to answer more complex queries than they imagine.  
+We might have data about topics our users are not aware of and may be able to answer more complex queries than they imagine. How can we let them discover what we have to offer? 
 
 #### Feedback
 
-ML needs good training data to be accurate. So at least in the beginning, we are likely to make errors. What would be that best way to collect feedback? Could we even gamify the learning process?
+ML needs good training data to be accurate. Learning is a process, and making mistakes is part of the experience. Therefore, at least in the beginning, it is likely that error may occur from time to time. . What would be the best way to collect feedback? Could we even gamify the learning process?
 
 #### Accessibility
 
-How can we build inclusive solutions for people with impairments like:  
+How can we build inclusive solutions for people with impairments or other limitations such as:
 
-- visual impairments  
-- dyscalculia (difficulty learning or comprehending arithmetic, such as difficulty in understanding numbers, …)  
-- nearly no computer skills  
-- no fluency in one of the official languages  
-- ….  
+- visual impairments;
+- dyscalculia (difficulty learning or comprehending arithmetic, such as difficulty in understanding numbers);
+- nearly no computer skills;
+- no fluency in one of the official languages of Switzerland (i.e. German, French, Italian and Romansh) or English.
+
 You can also explore solutions specifically targeting groups with disabilities.
