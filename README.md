@@ -8,24 +8,29 @@ If you have any questions or further commentary regarding the documentation and 
 
 ## The Challenge
 
-Open Data is more prevalent than ever. However, given that it is often only available in isolated datasets, published in many different formats or solely accessible via APIs, using this information source remains hard, especially if more complex queries are required.
+The amount of published Open Data is growing every day. However, given that it is often only available in isolated datasets, published in many different formats or solely accessible via APIs, using this information source remains hard, especially if more complex queries are required.
 
 Your challenge: Empower citizens by making the access to Open Government Data as easy and intuitive as possible. We suggest 4 different ways to approach this complex challenge, but feel free to solve only your favorite task(s)!
 
-- Build a user interface. This could be a website, an app or a bot – or surprise us with a completely new approach that allows users to interact with open data. You can (but are not obliged to) use ValueNet, a state-of-the-art Natural Language-to-SQL-System, to enable non-technical users to query the data without the knowledge of SQL. We have prepared a pre-trained instance with sample datasets.
+- Build a user interface. This could be a website, an app or a bot – or surprise us with a completely new approach that allows users to interact with open data. You can (but are not obliged to) use ValueNet, a state-of-the-art Natural Language-to-SQL system, to enable non-technical users to query the data without the knowledge of SQL. We have prepared a pre-trained instance with sample datasets.
 - Improve ValueNet’s accuracy by generating better training data or by tweaking the algorithm.
 - Integrate more datasets to our ValueNet instance so that it can answer questions about more relevant topics.
 - Automate the data integration process so that manual user interaction is minimized.
 
 To complete the challenge, we’ll provide you with a wide array of data and tools which you can use to your heart’s desire. In the following sections, you’ll find additional information and resources you’ll have at your disposal for the challenge.
 
-The criteria we’ll use to judge your valued contribution are originality, execution and usefulness to citizens.
+The criteria we’ll use to judge your valued contribution are:
+- Execution (Is your solution well designed? Is it usable in its current state? Does everything appear to work?)
+- Originality (Does your solution provide a fresh and novel approach to our challenge? Thinking outside the box is encouraged!)
+- Value (Does your solution significantly advance / add value to our currently available tools?)
+- Presentation (Does your pitch enhance the technical value of your hack?)
+- Usefulness to citizens (Would they actually use your solution? Does it fulfill the needs of special user categories? Is the user experience smooth?)
 
 ## Resources
 
 ### ValueNet
 
-ValueNet is a state-of-the-art Natural Language-to-SQL-System developed in the EU project INODE designed to explore data and to show insightful results. ValueNet has been trained on the Spider benchmark dataset, which consists of about 200 databases and 10K natural language / SQL pairs for training the system. You will find a paper describing ValueNet on: [https://digitalcollection.zhaw.ch/handle/11475/22000](https://digitalcollection.zhaw.ch/handle/11475/22000).
+ValueNet is a state-of-the-art Natural Language-to-SQL system developed in the EU project INODE designed to explore data and to show insightful results. ValueNet has been trained on the Spider benchmark dataset, which consists of about 200 databases and 10K natural language / SQL pairs for training the system. You will find a paper describing ValueNet on: [https://digitalcollection.zhaw.ch/handle/11475/22000](https://digitalcollection.zhaw.ch/handle/11475/22000).
 
 The source code and tutorials are hosted on [https://github.com/brunnurs/valuenet](https://github.com/brunnurs/valuenet).
 
