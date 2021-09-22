@@ -34,6 +34,10 @@ ValueNet is a state-of-the-art Natural Language-to-SQL system developed in the E
 
 The source code and tutorials are hosted on [https://github.com/brunnurs/valuenet](https://github.com/brunnurs/valuenet).
 
+An Open API Specification (aka Swagger specification) documenting the ValueNet API is available in [spec.yaml](./doc/api/spec.yaml) file.
+
+If you want to self host the ValueNet API, you will need a Google API key to be able to run the ValueNet API. Follow the instructions in the [self_hosted_inference_api.md](./doc/self_hosted_inference_api.md) file to genrate an API key.
+
 ### CORSTAT Sample Datasets and pre-trained ValueNet instance
 
 For the challenge, CORSTAT provides us with various statistical data with interesting links about environmental protection focusing on transportation. It includes several datasets from the canton of Zurich and the canton of Basel-City, such as the number of registered electric cars or the use of and accessibility by public transport in certain regions. In addition, we added data from the Federal Office of Energy on charging stations for electric cars and converted it to a similar format. We have loaded the data into a relational database, analyzed it and identified interesting questions like:
