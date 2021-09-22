@@ -13,8 +13,14 @@ The Valuenet API depends on Google API. Make sure your account has a valid API t
 
 Here are some screenshots to help you find the menus in the Google console interface.
 
+## APIs and Services menu
+
 ![APIs and Services menu](./images/01-api-services.png)
 
+## Credentials menu
+
 ![Credentials menu](./images/02-credentials.png)
+
+## API Key menu
 
 ![API Key menu](./images/03-api-key.png)
