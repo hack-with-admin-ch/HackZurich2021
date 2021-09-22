@@ -6,7 +6,7 @@ info:
 
 servers:
   - url: https://inference.hackzurich2021.hack-with-admin.ch
-    description: Hackathon's instance
+    description: FOITT instance
   - url: https://valuenet.cloudlab.zhaw.ch
     description: ZHAW instance
 
