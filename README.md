@@ -34,6 +34,29 @@ ValueNet is a state-of-the-art Natural Language-to-SQL system developed in the E
 
 The source code and tutorials are hosted on [https://github.com/brunnurs/valuenet](https://github.com/brunnurs/valuenet).
 
+### HackZurich ValueNet Inference API
+
+At <https://inference.hackzurich2021.hack-with-admin.ch>, you can reach an hosted instance of ValueNet.
+It has access to the CORSTAT sample datasets (see below). The API key is `sjNmaCtviYzXWlS`.
+
+An Open API Specification (aka Swagger specification) documenting the ValueNet API is available at [spec.yaml](./api/spec.yaml) or [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/hack-with-admin-ch/HackZurich2021/main/api/spec.yaml).
+
+Be aware that you use the model in a zero-shot way, so the model has never been fine-tuned on the specific database, but only on the ~200 databases provided in the Spider dataset (<https://github.com/taoyds/spider>). If you have created a better model or added interesting data, please let us know.
+
+If you have any questions or problems then please contact us on our Slack channel #03_ws08_foitt.
+
+Here is an example calling the API with curl:
+
+```bash
+curl -X 'PUT' \
+  'https://inference.hackzurich2021.hack-with-admin.ch/api/question/hack_zurich' \
+  -H 'X-API-KEY: sjNmaCtviYzXWlS' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "What is the share of electric cars in 2016 for Wetzikon?"
+}'
+```
+
 ### CORSTAT Sample Datasets and pre-trained ValueNet instance
 
 For the challenge, CORSTAT provides us with various statistical data with interesting links about environmental protection focusing on transportation. It includes several datasets from the canton of Zurich and the canton of Basel-City, such as the number of registered electric cars or the use of and accessibility by public transport in certain regions. In addition, we added data from the Federal Office of Energy on charging stations for electric cars and converted it to a similar format. We have loaded the data into a relational database, analyzed it and identified interesting questions like:

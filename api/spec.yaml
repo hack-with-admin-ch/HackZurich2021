@@ -1,0 +1,162 @@
+openapi: 3.0.0
+
+info:
+  title: Valuenet Inference API
+  version: 1.0.0
+
+servers:
+  - url: https://inference.hackzurich2021.hack-with-admin.ch
+    description: FOITT instance
+  - url: https://valuenet.cloudlab.zhaw.ch
+    description: ZHAW instance
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+
+security:
+  - ApiKeyAuth: []
+
+paths:
+  /api/question/{database}:
+    put:
+      summary: Convert a question to a SQL query and get its result
+      description: Optional extended description in CommonMark or HTML.
+      parameters:
+        - in: path
+          name: database
+          schema:
+            type: string
+          required: true
+          description: Database name
+          example: hack_zurich
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                  description: Question
+                # beam_size:
+                #   type: number
+            examples:
+              wetzikon:
+                summary: Get the share of electric cars in 2016 for the city of Wetzikon
+                value:
+                  question: "What is the share of electric cars in 2016 for Wetzikon?"
+                  # beam_size: 2
+
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  beams:
+                    type: array
+                    items:
+                      type: array
+                      items: {}
+                  potential_values_found_in_db:
+                    type: array
+                    items:
+                      type: string
+                  question:
+                    type: string
+                  question_tokenized:
+                    type: array
+                    items:
+                      type: string
+                  result:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: string
+                  sem_ql:
+                    type: string
+                  sql:
+                    type: string
+              examples:
+                wetzikon:
+                  summary: Get the share of electric cars in 2016 for the city of Wetzikon
+                  value:
+                    beams:
+                      - 
+                        - "SELECT T1.share_electric_cars FROM share_electric_cars AS T1 JOIN spatialunit AS T2 ON T1.spatialunit_id = T2.spatialunit_id WHERE T2.name = 'Wetzikon' and T1.year = 2016       "
+                        - 7.843193054199219
+                    potential_values_found_in_db:
+                      - "2016"
+                      - Wetzikon
+                    question: "What is the share of electric cars in 2016 for Wetzikon?"
+                    question_tokenized:
+                      - "What"
+                      - "is"
+                      - "the"
+                      - "share"
+                      - "of"
+                      - "electric"
+                      - "cars"
+                      - "in"
+                      - "2016"
+                      - "for"
+                      - "Wetzikon"
+                      - "?"
+                    result:
+                      - 
+                        - "0.3"
+                    sem_sql: "Root1(3) Root(3) Sel(0) N(0) A(0) C(28) T(11) Filter(0) Filter(2) A(0) C(12) T(1) V(1) Filter(2) A(0) C(18) T(11) V(0)"
+                    sql: "SELECT T1.share_electric_cars FROM share_electric_cars AS T1 JOIN spatialunit AS T2 ON T1.spatialunit_id = T2.spatialunit_id WHERE T2.name = 'Wetzikon' and T1.year = 2016       "
+
+        '403':
+          description: 'Invalid API key'
+          content:
+            text/html:
+              schema:
+                type: string
+              examples:
+                invalid_key:
+                  summary: The API key is invalid
+                  value: |
+                    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+                    <title>403 Forbidden</title>
+                    <h1>Forbidden</h1>
+                    <p>Please provide a valid API Key</p>
+
+        '400':
+          description: 'Invalid HTTP request (usually missing or wrong parameters)'
+          content:
+            text/html:
+              schema:
+                type: string
+              examples:
+                missing_question:
+                  summary: "Question key is missing in the request body"
+                  value: |
+                    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+                    <title>400 Bad Request</title>
+                    <h1>Bad Request</h1>
+                    <p>Please specify a question, e.g. POST { question: 'Whats the question?' }</p>
+
+        '405':
+          description: 'Invalid HTTP request (wrong HTTP verb used)'
+          content:
+            text/html:
+              schema:
+                type: string
+              examples:
+                wrong_http_verb:
+                  summary: "POST instead of PUT"
+                  value: |
+                    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+                    <title>405 Method Not Allowed</title>
+                    <h1>Method Not Allowed</h1>
+                    <p>The method is not allowed for the requested URL.</p>
