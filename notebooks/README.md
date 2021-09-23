@@ -1,10 +1,10 @@
 # Google Colaboratory Notebook Valuenet
 
-This repository containes notebooks to run [Valuenet](https://github.com/brunnurs/valuenet) codebase in ][Google Colaboratory](https://colab.research.google.com/)
+This repository contains notebooks to run [Valuenet](https://github.com/brunnurs/valuenet) codebase on [Google Colaboratory](https://colab.research.google.com/)
 
 ### Configuration
 
-Just put this files into your Google Colaboratory environment.
+Just put these files in your Google Colaboratory environment.
 
 ### Notebooks
 There are then 3 notebooks:
