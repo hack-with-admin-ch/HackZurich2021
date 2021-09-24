@@ -2,6 +2,8 @@
 
 This repository contains notebooks to run [Valuenet](https://github.com/brunnurs/valuenet) codebase on [Google Colaboratory](https://colab.research.google.com/)
 
+The training on colab for the custom data take ~4h for 50 epochs with a batch_size of 4.
+
 ### Configuration
 
 Just put these files in your Google Colaboratory environment.
