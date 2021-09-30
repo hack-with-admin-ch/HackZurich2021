@@ -36,6 +36,8 @@ The source code and tutorials are hosted on [https://github.com/brunnurs/valuene
 
 ### HackZurich ValueNet Inference API
 
+:exclamation: The instance at <https://inference.hackzurich2021.hack-with-admin.ch> is now offline. ZHAW's ValueNet team is providing an instance. See <https://github.com/brunnurs/valuenet> for details.
+
 At <https://inference.hackzurich2021.hack-with-admin.ch>, you can reach an hosted instance of ValueNet.
 It has access to the CORSTAT sample datasets (see below). The API key is `sjNmaCtviYzXWlS`.
 
